@@ -1,2 +1,2 @@
 # Hestia
-Domotic project called hestia for the greek goddess 
+Domotic project called hestia for the greek goddess.
