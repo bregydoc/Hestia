@@ -8,6 +8,7 @@ I2C = 2
 class TemperatureSensor:
     """docstring for TemperatureSensor."""
     def __init__(self, typeSensor = TEST):
+        self.typeSensor = typeSensor
         if typeSensor == TEST:
             self.connectPin = None
             self.lastValue = 0.0
@@ -17,9 +18,9 @@ class TemperatureSensor:
             pass
 
     def readSensor(self):
-        if typeSensor == TEST:
+        if self.typeSensor == TEST:
             return r.randint(10, 20)
-        elif typeSensor == ONE_WIRE:
+        elif self.typeSensor == ONE_WIRE:
             # ...
             return None
 
