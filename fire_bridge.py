@@ -7,10 +7,12 @@ class FireBridge:
         self.document = document
 
     def pushData(self):
-        self.document.set({
+        d = {
             u'value': self.sensor.getCurrentValue(),
             u'update_at': datetime.datetime.today()
-        })
+        }
+        self.document.set(d)
+        return d
 
     def pullCloudData(self):
         data = self.document.get().to_dict()
