@@ -32,6 +32,7 @@ class FireBridgeActuator:
         self.document = document
 
     def pullCloudData(self):
+        data = None
         try:
             data = self.document.get().to_dict()
         except google.cloud.exceptions.NotFound:
@@ -39,6 +40,7 @@ class FireBridgeActuator:
                 u'value': self.actuator.getInternalState(),
                 u'update_at': datetime.datetime.today()
             })
+            data = self.document.get().to_dict()
         return data
 
     def propagateData(self):
