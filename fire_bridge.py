@@ -31,7 +31,13 @@ class FireBridgeActuator:
         self.document = document
 
     def pullCloudData(self):
-        data = self.document.get().to_dict()
+        try:
+            data = self.document.get().to_dict()
+        except google.cloud.exceptions.NotFound:
+            self.document.set({
+                u'value': self.actuator.getInternalState(),
+                u'update_at': datetime.datetime.today()
+            })
         return data
 
     def propagateData(self):
