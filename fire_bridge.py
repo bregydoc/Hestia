@@ -45,7 +45,8 @@ class FireBridgeActuator:
 
     def propagateData(self):
         data = self.pullCloudData()
-        output = data['value']
+        output = int(data['value'])
+        print data
         self.actuator.setState(output)
 
     def pullLocalData(self):
