@@ -1,0 +1,28 @@
+{
+    "sensors": [
+        {
+            "route": "temperature",
+            "type": "temperature",
+            "conexion": "test"
+        },
+        {
+            "route": "movement",
+            "type": "movement",
+            "conexion": "test"
+        }
+    ],
+    "actuators": [
+        {
+            "route": "alarm1",
+            "type": "discrete",
+            "conexion": "GPIO@12"
+        },
+        {
+            "route": "alarm2",
+            "type": "discrete",
+            "conexion": "GPIO@13"
+        }
+    ]
+
+
+}
